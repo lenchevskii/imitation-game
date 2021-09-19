@@ -1,4 +1,6 @@
-const H = require('../../utils/general.helper')
+require('module-alias/register')
+
+const H = require('@general-helper')
 const IMITATION = require('./imitation')
 
 H.trace(
