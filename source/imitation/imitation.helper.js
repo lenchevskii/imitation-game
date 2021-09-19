@@ -6,10 +6,7 @@ const R = require('ramda')
  */
 const generateSequence =
   (length) =>
-    L
-      .generate(R.identity)
-      .takeWhile(x => x <= length)
-      .toArray()
+    L.range(length).toArray()
 
 /**
  * @param {*} initial 
@@ -19,7 +16,7 @@ const maybeInitial =
   (initial, collection) =>
     R.isNil(initial)
       ? collection
-      : [initial].concat(collection)
+      : [].concat(initial).concat(collection)
 
 /**
  * @param {*} paramO
