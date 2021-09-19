@@ -1,12 +1,4 @@
-const L = require('lazy.js')
 const R = require('ramda')
-
-/**
- * @param {Number} length 
- */
-const generateSequence =
-  (length) =>
-    L.range(length).toArray()
 
 /**
  * @param {*} initial 
@@ -41,6 +33,5 @@ const mapR =
 module.exports = {
   maybeInitial: R.curry(maybeInitial),
   reduceR: R.curry(reduceR),
-  generateSequence,
   mapR
 }

@@ -1,9 +1,6 @@
 const R = require('ramda')
 const IMITATION_HELPER = require('./imitation.helper')
 
-const COLLECTION = [1, 2, 3, 4, 5, 6]
-// const COLLECTION = IMITATION_HELPER.generateSequence(10)   // wrong sequence initialization
-
 /**
  * @param {Array} collection 
  * @param {Function} fnc 
@@ -26,6 +23,5 @@ const reduceTCE =
 
 module.exports = {
   mapTCE,
-  reduceTCE,
-  COLLECTION
+  reduceTCE
 }
