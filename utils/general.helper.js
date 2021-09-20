@@ -1,11 +1,18 @@
+const M = require('monet')
+
 /**
  * Tracing function for embedding
  * @param {*} x Traced parameter
- * @param  {...any} comment Untraced comments
+ * @param  {...any} comments Untraced comments
  * @returns x
  */
 const trace =
-  (x, ...comment) => { console.log(x, ...comment); return x }
+  (x, ...comments) =>
+    M.IO(
+      () => console.log(x, ...comments)
+    ).takeRight(
+      M.IO(() => x)
+    ).run()
 
 module.exports = {
   trace
