@@ -12,22 +12,22 @@ const maybeInitial =
 
 /**
  * @param {*} paramO
- * @param {Function} innerFnc  
+ * @param {Function} fnc  
  */
 const reduceR =
-  ([frst, scnd, ...tail], innerFnc) =>
+  ([frst, scnd, ...tail], fnc) =>
     scnd
-      ? innerFnc(frst, reduceR([].concat(scnd).concat(tail), innerFnc))
+      ? fnc(frst, reduceR([].concat(scnd).concat(tail), fnc))
       : frst
 
 /**
  * @param {*} param0 
- * @param {Function} innerFnc 
+ * @param {Function} fnc 
  */
 const mapR =
-  ([head, ...tail], innerFnc) =>
+  ([head, ...tail], fnc) =>
     head
-      ? [].concat(innerFnc(head)).concat(mapR(tail, innerFnc))
+      ? [].concat(fnc(head)).concat(mapR(tail, fnc))
       : []
 
 module.exports = {
