@@ -1,5 +1,5 @@
 const R = require('ramda')
-const IMITATION_HELPER = require('./imitation.helper')
+const IMITATION_HANDLER = require('./imitation.handler')
 
 /**
  * @param {Array} collection 
@@ -7,7 +7,7 @@ const IMITATION_HELPER = require('./imitation.helper')
  */
 const mapTCE =
   (collection, fnc) =>
-    IMITATION_HELPER.mapR(collection, fnc)
+    IMITATION_HANDLER.mapR(collection, fnc)
 
 /**
  * @param {Array} collection 
@@ -17,8 +17,8 @@ const mapTCE =
 const reduceTCE =
   (collection, fnc, initial) =>
     R.compose(
-      IMITATION_HELPER.reduceR(R.__, fnc),
-      IMITATION_HELPER.maybeInitial(initial, R.__)
+      IMITATION_HANDLER.reduceR(R.__, fnc),
+      IMITATION_HANDLER.maybeInitial(initial, R.__)
     )(collection)
 
 module.exports = {
