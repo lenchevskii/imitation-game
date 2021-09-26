@@ -13,7 +13,7 @@ H.trace(
 )
 
 H.trace(
-  IMITATION.mapTCE(COLLECTION, Math.exp),
+  IMITATION.mapTCO(COLLECTION, Math.exp),
   ':tail call eliminated recursive map'
 )
 
@@ -23,6 +23,6 @@ H.trace(
 )
 
 H.trace(
-  IMITATION.reduceTCE(COLLECTION, (p, c) => p + c, 20),
+  IMITATION.reduceTCO(COLLECTION, (p, c) => p + c, 20),
   ':tail call eliminated recursive reduce'
 )
